@@ -2,6 +2,7 @@
 import operator
 from datetime import datetime
 import sys
+from termcolor import colored
 
 ops = {
     '+': operator.add,
@@ -23,7 +24,8 @@ def calculate(myarg):
             function = ops[token]
             
             result = function(arg1, arg2)
-            print(result)
+            #print(result)
+            print(colored(result, 'red'))
             stack.append(result)
 
     return stack.pop()
